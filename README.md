@@ -4,4 +4,4 @@ Foundation for RESTful API for Artsper, a contemporary art marketplace where gal
 
 The foundation uses silex micro framework to handle requests and responses and doctrine orm to handle data and database.
 
-Until now, the initial setup with doctrine entities has been prepared. Routes are yet to declared.
+Until now, the initial setup with doctrine entities has been prepared. Routes are yet to be declared.
