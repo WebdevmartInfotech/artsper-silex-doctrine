@@ -79,5 +79,17 @@ class Gallery {
   public function getEmail() {
     return $this->email;
   }
+  
+  /**
+   * Get all info as array
+   * @return array
+   */
+  public function get() {
+    return array(
+      'id' => $this->getId(),
+      'name' => $this->getName(),
+      'email' => $this->getEmail()
+    );
+  }
 
 }

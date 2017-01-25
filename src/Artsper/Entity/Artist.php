@@ -139,6 +139,20 @@ class Artist {
     return $this->country;
   }
   
+  /**
+   * Get all info as array
+   * @return array
+   */
+  public function get() {
+    return array(
+      'id' => $this->getId(),
+      'firstname' => $this->getFirstname(),
+      'lastname' => $this->getLastname(),
+      'birthday' => $this->getBirthday(),
+      'biography' => $this->getBiography(),
+      'country' => $this->getCountry()->get()
+    );
+  }
   
 
 }

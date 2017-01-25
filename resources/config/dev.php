@@ -15,6 +15,7 @@ $app['db.options'] = array(
 );
 
 $app['orm.proxies_dir'] = $app['cache.path'] . '/doctrine/proxies';
+
 $app['orm.default_cache'] = array(
   'driver' => 'filesystem',
   'path' => $app['cache.path'] . '/doctrine/cache',
@@ -25,11 +26,16 @@ $app['orm.em.options'] = array(
   'mappings' => array(
     array(
       'type' => 'annotation',
-      'path' => realpath(__DIR__ . '/../../src'),
+      'path' => __DIR__ . '/../../src/Artsper/Entity',
       'namespace' => 'Artsper\Entity',
+      'alias' => 'Artsper'
     ),
   ),
 );
+
+$isDevMode = true;
+$config = Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(array(__DIR__."/../../src/Artsper/Entity"), $isDevMode);
+$app['em'] = Doctrine\ORM\EntityManager::create($app['db.options'], $config);
 
 $app['debug'] = true;
 $app['orm.default_cache'] = 'array';

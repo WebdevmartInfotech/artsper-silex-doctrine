@@ -79,5 +79,17 @@ class Category {
   public function getSeoUrl() {
     return $this->seo_url;
   }
+  
+  /**
+   * Get all info as array
+   * @return array
+   */
+  public function get() {
+    return array(
+      'id' => $this->getId(),
+      'label' => $this->getLabel(),
+      'seo_url' => $this->getSeoUrl()
+    );
+  }
 
 }

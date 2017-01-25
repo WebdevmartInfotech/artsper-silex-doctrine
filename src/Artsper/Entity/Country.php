@@ -126,7 +126,19 @@ class Country {
     return $this->url_en;
   }
   
-  
+  /**
+   * Get all info as array
+   * @return array
+   */
+  public function get() {
+    return array(
+      'id' => $this->getId(),
+      'label_fr' => $this->getLblFr(),
+      'label_en' => $this->getLblEn(),
+      'seo_url_fr' => $this->getUrlFr(),
+      'seo_url_en' => $this->getUrlEn(),
+    );
+  }
   
   
   
