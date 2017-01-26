@@ -67,7 +67,7 @@ If artwork is not found, it will send `404 Not Found` with following response:
 
 - For adding, editing and removing artworks, all validations are handled with **Symfony Validator** which is implemented in `src/Artsper/Controller/Artwork.php`.
 
-For example, calling the `artwork/edit` without any parameter will give response as follows:
+For example, calling the `artwork/edit` without any parameter will give response with `400 Bad Request` as follows:
 ```
 {
   "success": 0,
