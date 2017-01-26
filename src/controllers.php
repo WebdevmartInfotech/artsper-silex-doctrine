@@ -4,15 +4,25 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-
-$app->post('/find', function(Request $request) use ($app) {
-  // Route for search functionalities
-});
-
 /**
  * Route for adding artwork
  */
 $app->post('/artwork/add', 'Artsper\Controller\Artwork::add');
+
+/**
+ * Route for editing artwork
+ */
+$app->post('/artwork/edit', 'Artsper\Controller\Artwork::edit');
+
+/**
+ * Route for deleting artwork
+ */
+$app->post('/artwork/del', 'Artsper\Controller\Artwork::del');
+
+/**
+ * Route for searching artworks
+ */
+$app->post('/artwork/search', 'Artsper\Controller\Artwork::search');
 
 
 /*

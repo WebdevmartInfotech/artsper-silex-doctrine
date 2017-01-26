@@ -346,6 +346,18 @@ class Artwork {
   public function get() {
     return array(
       'id' => $this->getId(),
+      'title' => $this->getTitle(),
+      'biography' => $this->getBiography(),
+      'year' => $this->getYear(),
+      'price' => $this->getPrice(),
+      'dimensions' => array(
+        'w' => $this->getWidth(),
+        'h' => $this->getHeight(),
+        'l' => $this->getLength()
+      ),
+      'is_certificated' => $this->getCertificated(),
+      'is_framed' => $this->getFramed(),
+      'is_numbered' => $this->getNumbered(),
       'artist' => $this->getArtist()->get(),
       'category' => $this->getCategory()->get(),
       'gallery' => $this->getGallery()->get(),
