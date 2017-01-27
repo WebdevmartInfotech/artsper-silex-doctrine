@@ -4,6 +4,20 @@ Foundation for RESTful API for Artsper, a contemporary art marketplace where gal
 
 The foundation uses silex micro framework to handle requests and responses and doctrine orm to handle data and database.
 
+**27-Jan-2017**
+
+- Implemented HTTP Basic Authentication for all routes under `/artwork/`. The configuration is applied in `resources/config/dev.php`. For now, only Basic Authentication has been applied. All calls under route `/artwork/` must be called with HTTP Authorization header. For now, the authorization is set to `admin` as username and `pwd` as password.
+
+```
+POST /artwork/search
+Authorization: Basic YWRtaW46cHdk
+Content-Type: application/json
+{
+	"order":"desc",
+	"category_id":26
+}
+```
+
 **26-Jan-2017**
 
 - Prepared routes for editing and removing artworks.
